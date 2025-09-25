@@ -1,0 +1,37 @@
+/*
+*Type selector : we use the name of an element to select
+*all of the same type elements
+*/
+h2 {
+    background-color: rgb(183, 180, 185);
+    border: 6px;
+    /* By default, widht and height porperties define the size of the cintent box*/
+    width: 400px;
+    height: fit-content;
+    /* Controls the space betwen the border ande the content box*/
+    padding: 30px;
+    /* Es para controlar el espacio entre un elemto con otros*/
+    margin: 40px;
+    padding-top: 20px;
+}
+
+h3 {
+    background-color: rgb(183, 180, 185);
+    border: 6px;
+    border-style: solid;
+    width: 400px;
+    height: fit-content;
+    padding: 30px;
+    margin: 40px;
+    padding-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+

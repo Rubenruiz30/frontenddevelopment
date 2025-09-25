@@ -1,0 +1,17 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+    text-align: center;
+    font-size: large;
+    
+
+
+}
+
+.small-profile-img{
+
+    border: 3px;
+    border-radius: 40px;
+}
