@@ -2,16 +2,34 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-header {
-    text-align: center;
-    font-size: large;
-    
+
+html {
+    border: 5px solid black;
+}
+
+body {
 
 
 }
 
-.small-profile-img{
+
+
+header {
+    border: 5px dashed blue;
+    text-align: center;
+    font-size: large;
+    background-color: bisque;
+
+
+
+}
+
+.small-profile-img {
 
     border: 3px;
     border-radius: 40px;
+}
+
+.baut-me-colum-2{
+    width: 400px;
 }

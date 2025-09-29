@@ -2,6 +2,8 @@
 *Type selector : we use the name of an element to select
 *all of the same type elements
 */
+
+
 h2 {
     background-color: rgb(183, 180, 185);
     border: 6px;
@@ -25,13 +27,3 @@ h3 {
     margin: 40px;
     padding-top: 20px;
 }
-
-
-
-
-
-
-
-
-
-
