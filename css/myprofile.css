@@ -7,15 +7,12 @@ html {
     border: 5px solid black;
 }
 
-body {
 
-
-}
 
 
 
 header {
-    border: 5px dashed blue;
+    border: 5px solid blue;
     text-align: center;
     font-size: large;
     background-color: bisque;
@@ -24,12 +21,63 @@ header {
 
 }
 
+section>main>h1 {
+    width: fit-content;
+    margin: 0 auto;
+    background-color: bisque;
+}
+
+
+
 .small-profile-img {
 
     border: 3px;
     border-radius: 40px;
 }
 
-.baut-me-colum-2{
-    width: 400px;
+
+
+p {
+    border: 5px solid blue;
+    background-color: bisque;
+
+}
+
+/* > este simbolo sirve para selecionar dentro de un esquema como puede ser body
+ lo que quieres selccionar dentro de ese bodu body>h1 eliges el h1 dentro de body*/
+body>h1 {
+    width: fit-content;
+    margin: 0 auto;
+    background-color: bisque;
+
+}
+.Abaut-me-colum-2{
+    width: 50%;
+    float: left;
+    border: 8px black;
+    margin: 10px;
+    padding: 10px;
+}
+#Abaut-me-colum-21>p {
+    height: 100px;
+}
+
+section>img {
+    width: fit-content;
+    margin: 0 auto;
+
+}
+
+#Abaut-me-colum-22 {
+    width: 200px;
+    height: 00px;
+    background: url("../img/OIP.webp");
+    background-size: cover;
+    background-position: center;
+    border: 2px solid red;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+.MyProjects-colum-4{
+    border: white;
 }
