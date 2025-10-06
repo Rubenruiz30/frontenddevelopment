@@ -1,24 +1,18 @@
 * {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
 }
-
 
 html {
     border: 5px solid black;
 }
 
-
-
-
-
+/* HEADER */
 header {
     border: 5px solid blue;
     text-align: center;
     font-size: large;
     background-color: bisque;
-
-
-
 }
 
 section>main>h1 {
@@ -27,57 +21,90 @@ section>main>h1 {
     background-color: bisque;
 }
 
-
-
+/* IMAGEN PEQUEÑA DEL HEADER */
 .small-profile-img {
-
-    border: 3px;
     border-radius: 40px;
 }
 
-
-
+/* PÁRRAFOS */
 p {
     border: 5px solid blue;
     background-color: bisque;
-
+    padding: 10px;
 }
 
-/* > este simbolo sirve para selecionar dentro de un esquema como puede ser body
- lo que quieres selccionar dentro de ese bodu body>h1 eliges el h1 dentro de body*/
+/* TÍTULO PRINCIPAL */
 body>h1 {
     width: fit-content;
     margin: 0 auto;
     background-color: bisque;
-
 }
-.Abaut-me-colum-2{
-    width: 50%;
+
+/* COLUMNA IZQUIERDA (texto About Me) */
+.Abaut-me-colum-2 {
     float: left;
-    border: 8px black;
+    width: 50%;
     margin: 10px;
     padding: 10px;
 }
-#Abaut-me-colum-21>p {
-    height: 100px;
+
+/* IMAGEN / COLUMNA DERECHA */
+.derecha {
+    float: right;
+    width: 40%;
+    text-align: center;
+    margin: 10px;
 }
 
-section>img {
-    width: fit-content;
+/* Asegura que la imagen no sea demasiado grande */
+.derecha img {
+    width: 80%;
+    border-radius: 10px;
+    display: block;
     margin: 0 auto;
-
 }
 
+/* CONTENEDOR DE AMBOS BLOQUES */
+.contenedor {
+    width: 100%;
+    overflow: hidden;
+    /* evita que los floats rompan el layout */
+}
+
+/* SECCIÓN DE PROYECTOS (asegura que quede debajo del About Me) */
+section {
+    clear: both;
+}
+
+p {
+    border: 2px solid #0044ff;
+    background-color: bisque;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+
+/* Bloque decorativo (opcional, estaba con errores de altura) */
 #Abaut-me-colum-22 {
     width: 200px;
-    height: 00px;
+    height: 200px;
+    /* antes tenías height: 00px */
     background: url("../img/OIP.webp");
     background-size: cover;
     background-position: center;
-    border: 2px solid red;
+    border: 4px solid red;
     margin: 20px auto;
     border-radius: 10px;
 }
-.MyProjects-colum-4{
-    border: white;
+
+.Myprojects-colum-4 {
+    float: left;
+    width: 10%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    background-color: bisque;
+    padding: 2px;
+    height: 200px;
+    text-align: center;
 }
