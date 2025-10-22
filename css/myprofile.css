@@ -68,7 +68,6 @@ body>h1 {
 .contenedor {
     width: 100%;
     overflow: hidden;
-    /* evita que los floats rompan el layout */
 }
 
 /* SECCIÓN DE PROYECTOS (asegura que quede debajo del About Me) */
@@ -88,7 +87,6 @@ p {
 #Abaut-me-colum-22 {
     width: 200px;
     height: 200px;
-    /* antes tenías height: 00px */
     background: url("../img/OIP.webp");
     background-size: cover;
     background-position: center;
@@ -97,14 +95,103 @@ p {
     border-radius: 10px;
 }
 
+/* CONTENEDOR DE TODAS LAS TARJETAS DE PROYECTOS */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    clear: both;
+}
+
+/* TARJETA DE PROYECTO */
 .Myprojects-colum-4 {
-    float: left;
-    width: 10%;
-    border-style: solid;
-    border-width: 2px;
-    border-color: blue;
     background-color: bisque;
-    padding: 2px;
-    height: 200px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 15px;
+    width: 220px;
     text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* TÍTULO DEL PROYECTO */
+.Myprojects-colum-4 h2 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+/* DESCRIPCIÓN DEL PROYECTO */
+.Myprojects-colum-4 p {
+    font-size: 0.95em;
+    color: #333;
+    border: none;
+    background: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+/* IMAGEN DEL PROYECTO */
+.Myprojects-colum-4 img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.Proyecto-facebook {
+    float: left;
+    width: 80px;
+    border: 20px;
+}
+
+.Proyecto-google {
+    float: right;
+    width: 50px;
+    border: 20px;
+}
+footer{
+    clear: both;
+}
+.experience-table-style{
+    width: 100%;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background-color: #fffaf0;
+    border: 2px solid #555;
+    padding: 10px; 
+}
+
+.experience-table-style>tr{
+    width: 100%;
+    margin: 20px;
+    font-size: 16px;
+    text-align: left;
+    background-color: #fffaf0;
+    border: 2px solid #555;
+    padding: 10px; 
+}
+
+.experience-table-style td {
+    border: 1px solid #555; /* Líneas internas */
+    padding: 12px 15px;
+}
+#experience-table-style{
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    border-collapse: collapse;
+}
+/* :nth-child(odd) is used to select all add chuldren elements of a type*/
+/* :nth-child(even) is used to select all even chuldren elements of a type*/
+
+tr:nth-child(even){
+    background-color: antiquewhite;
+}
+.footer-content-left{
+    float: left;
+}
+.footer-content-right{
+    float: right;
 }
