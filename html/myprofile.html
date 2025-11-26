@@ -1,152 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto profile</title>
-    <link href="../css/myprofile.css" rel="stylesheet">
+  <!-- Configuración del documento -->
+  <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace la web responsive -->
+  <title>Perfil de Rubén Ruiz</title> <!-- Título de la pestaña del navegador -->
+  <link rel="stylesheet" href="../css/myprofile.css"> <!-- Enlaza el CSS externo -->
 </head>
 
 <body>
-    <header>
-        <img src="../img/OIP.webp" alt="Logo" width="200" height="100" class="small-profile-img">
-        <h1>Programador</h1>
-    </header>
+  <!-- ===================== HEADER ===================== -->
+  <header>
+    <img src="../img/OIP.webp" alt="Logo Rubén" class="logo"> <!-- Imagen de perfil o logo -->
+    <h1>Rubén Ruiz</h1> <!-- Nombre principal -->
+    <p class="tagline">Técnico en Sistemas Microinformáticos y Redes</p> <!-- Descripción o tagline -->
+  </header>
 
-    <main>
-        <section class="proyect-section">
-            <h1>About Me</h1>
-
-            <div class="contenedor">
-                <!-- Columna izquierda (texto) -->
-                <div class="Abaut-me-colum-2">
-                    <p>
-                        Hola, me llamo Rubén Ruiz y me considero una persona curiosa y con muchas ganas de aprender.
-                        Actualmente estoy estudiando un grado medio de Técnico en Sistemas Microinformáticos y Redes,
-                        algo que me motiva porque siempre me ha gustado la informática y el mundo de la tecnología.
-                        Disfruto entendiendo cómo funcionan las cosas por dentro, ya sea un ordenador, una red o un
-                        programa, y me gusta el reto de resolver problemas cuando algo no funciona como debería.
-                    </p>
-
-                    <p>
-                        Fuera de los estudios, me gusta mantener un equilibrio entre mis intereses personales y mis
-                        metas
-                        profesionales. Soy alguien que valora la creatividad, la constancia y el esfuerzo, y trato de
-                        aplicarlo en todo lo que hago. Tengo claro que quiero seguir creciendo, aprendiendo nuevas
-                        habilidades y mejorando cada día, no solo para alcanzar mis objetivos en la informática, sino
-                        también para desarrollarme como persona.
-                    </p>
-                </div>
-
-                <!-- Columna derecha (imagen) -->
-                <div class="derecha">
-                    <img src="../img/OIP.webp" alt="Imagen relacionada con código">
-                </div>
-            </div>
-        </section>
-
-        <section id="projects-section">
-            <h1>My Projects</h1>
-            <div class="projects-container">
-                <div class="Myprojects-colum-4">
-                    <h2>Game Developer</h2>
-                    <p>Soy game developer</p>
-                    <img src="../img/OIP.webp" alt="Proyecto 1">
-                </div>
-
-                <div class="Myprojects-colum-4">
-                    <h2>Game Developer</h2>
-                    <p>que me gusta</p>
-                    <img src="../img/OIP.webp" alt="Proyecto 2">
-                </div>
-
-                <div class="Myprojects-colum-4">
-                    <h2>Game Developer</h2>
-                    <p>Soy game developer</p>
-
-                </div>
-
-                <div class="Myprojects-colum-4">
-                    <h2>Game Developer</h2>
-                    <p>Soy game developer</p>
-
-                </div>
-
-                <div class="Myprojects-colum-4">
-                    <h2>Game Developer</h2>
-                </div>
-            </div>
-        </section>
-        <section id="experrience-section">
-            <h1> Experience</h1>
-            <div>
-                <table class="experience-table-style">
-                    <tr>
-                        <td>
-                            Codigo 1
-                        </td>
-                        <td>
-                            codigo 2
-                        </td>
-                        <td>
-                            codigo 3
-                        </td>
-                    </tr>
-
-                    <td>
-                        Codigo 1
-                    </td>
-                    <td>
-                        codigo 2
-                    </td>
-                    <td>
-                        codigo 3
-                    </td>
-                    </tr>
-
-                    <td>
-                        Codigo 1
-                    </td>
-                    <td>
-                        codigo 2
-                    </td>
-                    <td>
-                        codigo 3
-                    </td>
-                    </tr>
-                </table>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="Proyecto-facebook">
-            <a href="https://es-es.facebook.com/"> <img src="../img/facebook-2-logo-svgrepo-com.svg" alt="" width="50px"
-                    height="50px"></a>
-        </div>
-        <div class="Proyecto-google">
-            <a href="https://www.google.com/?safe=active&ssui=on"> <img src="../img/google-icon-logo-svgrepo-com.svg"
-                    alt="" width="50px" height="50px"></a>
-        </div>
-    </footer>
-    <footer>
-        <div class="footer-content-left">
-            <a href="https://github.com/Rubenruiz30/frontenddevelopment">
-                <img src="../img/nike.jpg" alt="" class="footer-icon-style" width="50px" height="50px">
-            </a>
-            <a href="https://github.com/Rubenruiz30/frontenddevelopment">
-                <img src="../img/foto web para entrevista.webp" alt="" class="footer-icon-style" width="50px" height="50px">
-            </a>
+  <!-- ===================== CONTENIDO PRINCIPAL ===================== -->
+  <main>
+    <!-- ===== SECCIÓN SOBRE MÍ ===== -->
+    <section id="about">
+      <h2>Sobre Mí</h2> <!-- Título de la sección -->
+      <div class="about-container"> <!-- Contenedor flexible (flexbox) para texto e imagen -->
+        
+        <!-- Bloque de texto sobre ti -->
+        <div class="about-text">
+          <p>
+            Hola, soy Rubén Ruiz, estudiante de Técnico en Sistemas Microinformáticos y Redes.  
+            Me apasiona la informática, las redes y todo lo relacionado con la tecnología.  
+            Disfruto aprendiendo cómo funcionan las cosas por dentro y resolviendo problemas.
+          </p>
+          <p>
+            Soy curioso, constante y creativo. Me gusta seguir creciendo, adquirir nuevas habilidades  
+            y mejorar cada día tanto profesional como personalmente.
+          </p>
         </div>
 
-        <div class="footer-content-right">
-            <a href="#">Home</a>
-            <!-- point to a page in the same application -->
-            <a href="./cssmode.html">About</a>
-            <!-- jump to a specific part of the same page using id -->
-            <a href="#projects-section">My Projects</a>
+        <!-- Bloque de imagen -->
+        <div class="about-image">
+          <img src="../img/OIP.webp" alt="Rubén Ruiz programando">
         </div>
-    </footer>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN PROYECTOS ===== -->
+    <section id="projects">
+      <h2>Proyectos</h2>
+      <div class="projects-container"> <!-- Contenedor flex para las tarjetas de proyectos -->
+        
+        <!-- Tarjeta de proyecto individual -->
+        <div class="project-card">
+          <h3>Web Personal</h3> <!-- Nombre del proyecto -->
+          <p>Diseñé mi propia web con HTML y CSS moderno.</p> <!-- Descripción del proyecto -->
+          <img src="../img/OIP.webp" alt="Proyecto 1"> <!-- Imagen representativa -->
+        </div>
+
+        <div class="project-card">
+          <h3>Juego 2D</h3>
+          <p>Desarrollé un juego en JavaScript como práctica de programación.</p>
+          <img src="../img/OIP.webp" alt="Proyecto 2">
+        </div>
+
+        <div class="project-card">
+          <h3>Servidor Linux</h3>
+          <p>Configuré un servidor Linux con servicios de red básicos.</p>
+          <img src="../img/OIP.webp" alt="Proyecto 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN EXPERIENCIA ===== -->
+    <section id="experience">
+      <h2>Experiencia</h2>
+      <div class="experience-grid"> <!-- Contenedor flex para experiencias -->
+        <div class="exp-item">Montaje de equipos</div>
+        <div class="exp-item">Administración de redes</div>
+        <div class="exp-item">Gestión de servidores</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer-icons"> <!-- Iconos de contacto o redes -->
+      <a href="https://github.com/Rubenruiz30/frontenddevelopment" target="_blank">
+        <img src="../img/foto web para entrevista.webp" alt="GitHub">
+      </a>
+      <a href="https://es-es.facebook.com/" target="_blank">
+        <img src="../img/facebook-2-logo-svgrepo-com.svg" alt="Facebook">
+      </a>
+      <a href="https://www.google.com/" target="_blank">
+        <img src="../img/google-icon-logo-svgrepo-com.svg" alt="Google">
+      </a>
+    </div>
+  </footer>
 </body>
-
 </html>
