@@ -1,0 +1,33 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+
+}
+
+.logo {
+    max-width: 10vw;
+    min-width: 3vw;
+}
+
+/* > is directo selector*/
+nav>ul {
+    list-style: none;
+    /* "display is a property used to arganize a group of element*/
+    /* "felx" is a one dimensional display style, wich
+ distribute the flex items inside the flex container*/
+    display: flex;
+    /* Chose the main axis direction along wich the flex items
+ are positioned*/
+    flex-direction: row;
+    /* Choose the way to distribute the flex items along the main axis*/
+    padding: 4vw;
+    /*Center/felx-start/felx-end/space-around/space-evenly/space-between*/
+    justify-content: space-around;
+    border: 2px black;
+}
+ul>div{
+    padding: 4vw;
+}
+nav>ul>a{
+    margin: 4vw;
+}
