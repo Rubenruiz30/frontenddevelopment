@@ -24,10 +24,16 @@ nav>ul {
     /*Center/felx-start/felx-end/space-around/space-evenly/space-between*/
     justify-content: space-around;
     border: 2px black;
+    /* We use this atribute to control how the elemts
+    are shown they surpass the widht of the container
+    "nowwrap" means the elemnt can ovreflow the edge of
+    the container*/
+    flex-wrap: wrap;
 }
 ul>div{
     padding: 4vw;
 }
 nav>ul>a{
     margin: 4vw;
+    border: 2px solid beige;
 }
