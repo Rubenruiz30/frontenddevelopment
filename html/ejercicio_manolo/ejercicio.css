@@ -1,0 +1,58 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{ font-size:16px; }
+
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+
+  /* GRID layout */
+  display:grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "sidebar"
+    "footer";
+}
+
+/* Áreas */
+.header{ grid-area:header; padding:1rem; }
+.main{ grid-area:main; padding:1rem; }
+.sidebar{ grid-area:sidebar; padding:1rem; }
+.footer{ grid-area:footer; padding:1rem; }
+
+/* Hero (vh/vw) */
+.hero{
+  height:35vh;
+  padding:3vh 4vw;
+}
+
+/* FLEXBOX componentes */
+.cards{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:1rem;
+}
+
+.card{
+  flex:1 1 200px;
+  padding:1rem;
+  border:1px solid #ccc;
+  border-radius:0.7rem;
+}
+
+/* Responsive */
+@media(min-width:768px){
+  body{
+    grid-template-columns:1fr 3fr;
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+  }
+}

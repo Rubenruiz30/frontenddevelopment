@@ -1,0 +1,24 @@
+<div class="producto">
+  <img src="../../../img/Camistea Francia mundia.jpg" alt="Camiseta Francia">
+  <div class="producto-info">
+    <h2>Camiseta Francia</h2>
+    <p class="descripcion">Camiseta oficial de la selección francesa</p>
+    <link rel="stylesheet" href="../css/francia.css">
+    <div class="producto-footer">
+      <p class="precio">29,99 €</p>
+      <button class="btn-comprar">Añadir al carrito</button>
+    </div>
+    <button onclick="addCarrito('Camiseta Francia', '29.99 €')">
+  Añadir al carrito
+</button>
+
+<script>
+  function addCarrito(nombre, precio) {
+    localStorage.setItem("producto", nombre);
+    localStorage.setItem("precio", precio);
+    alert("Añadido al carrito");
+  }
+</script>
+
+  </div>
+</div>

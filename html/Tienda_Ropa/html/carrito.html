@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito</title>
+</head>
+<body>
+
+<h1>Carrito</h1>
+
+<p id="producto"></p>
+<p id="precio"></p>
+
+<a href="login.html">Volver</a>
+
+<script>
+  let producto = localStorage.getItem("producto");
+  let precio = localStorage.getItem("precio");
+
+  if (producto) {
+    document.getElementById("producto").textContent =
+      "Producto: " + producto;
+    document.getElementById("precio").textContent =
+      "Precio: " + precio;
+  } else {
+    document.getElementById("producto").textContent =
+      "El carrito está vacío";
+  }
+</script>
+
+</body>
+</html>
+

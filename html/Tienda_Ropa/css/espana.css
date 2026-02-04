@@ -1,0 +1,101 @@
+/* Ajusta el tamaño de los elementos correctamente */
+* {
+  box-sizing: border-box;
+}
+
+/* Tarjeta del producto */
+.producto {
+  width: min(380px, 100%);
+  background: #ffffff;
+  border: 1px solid #e9e9e9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto al pasar el ratón */
+.producto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen del producto */
+.producto img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Información del producto */
+.producto-info {
+  padding: 16px;
+}
+
+/* Título */
+.producto h2 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  color: #1a1a1a;
+}
+
+/* Descripción */
+.descripcion {
+  margin: 0 0 14px;
+  color: #666;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+/* Precio y botón */
+.producto-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Precio */
+.precio {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Botón de compra */
+.btn-comprar {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff3b3b, #ff7a00);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+/* Efectos del botón */
+.btn-comprar:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+
+.btn-comprar:active {
+  transform: scale(0.98);
+}
+
+/* Responsive para móvil */
+@media (max-width: 420px) {
+  .producto img {
+    height: 190px;
+  }
+
+  .producto-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-comprar {
+    width: 100%;
+  }
+}

@@ -1,0 +1,45 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Cabecera */
+header {
+  background-color: #c62828;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Título principal */
+header h1 {
+  margin: 0;
+}
+
+/* Secciones */
+section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+/* Títulos de sección */
+section h2 {
+  color: #c62828;
+  margin-top: 0;
+}
+
+/* Listas */
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
+}

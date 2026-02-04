@@ -1,138 +1,191 @@
-/* ===== RESET BÁSICO ===== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+/* =========================
+   RESET BÁSICO
+   ========================= */
+/* Eliminamos márgenes y paddings por defecto,
+   usamos box-sizing para facilitar el cálculo
+   de tamaños y fijamos una fuente base */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
 
-/* ===== CUERPO ===== */
-body {
-    background: linear-gradient(120deg, #0a2a43, #0f4c75);
-    min-height: 100vh;
-    color: #fff;
+/* Estilos generales del body */
+body{
+  min-height:100vh;        /* Altura mínima de toda la pantalla */
+  overflow-x:hidden;       /* Evita scroll horizontal */
+  color:#fff;              /* Texto blanco */
+  background:#0b1d3a;      /* Fondo azul oscuro */
 }
 
-/* ===== HEADER ===== */
-header {
-    text-align: center;
-    padding: 20px;
+/* =========================
+   GRID: estructura general
+   ========================= */
+/* Usamos CSS Grid para organizar la página
+   en header, nav, main y footer */
+body{
+  display:grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
 }
 
-header .logo {
-    width: 120px;
-    margin-bottom: 10px;
+/* Asignación de cada zona al grid */
+header{grid-area:header;}
+nav{grid-area:nav;}
+main{grid-area:main;}
+footer{grid-area:footer;}
+
+/* =========================
+   HEADER
+   ========================= */
+/* Cabecera centrada con algo de espacio */
+header{
+  text-align:center;
+  padding:20px;
 }
 
-header p {
-    font-size: 20px;
-    font-weight: bold;
+/* Logo centrado y con tamaño fijo */
+.logo{
+  width:90px;
+  margin:0 auto 10px;
+  display:block;
 }
 
-/* ===== NAV ===== */
-nav {
-    background: #021b2d;
-    padding: 10px 0;
+/* =========================
+   NAV
+   ========================= */
+/* Barra de navegación */
+nav{
+  background:#021b2d;
+  padding:10px;
 }
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 25px;
+/* Lista de enlaces usando Flexbox */
+nav ul{
+  list-style:none;         /* Quitamos viñetas */
+  display:flex;            /* Activamos flexbox */
+  justify-content:center;  /* Centramos los enlaces */
+  gap:15px;                /* Espacio entre enlaces */
+  flex-wrap:wrap;          /* Permite saltar de línea */
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: 0.3s;
+/* Enlaces del menú */
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-nav ul li a:hover {
-    color: #00d4ff;
+/* Efecto hover en los enlaces */
+nav a:hover{
+  color:#4de7ff;
 }
 
-/* ===== CONTENEDOR PRINCIPAL ===== */
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 20px;
+/* =========================
+   MAIN
+   ========================= */
+/* Contenedor principal centrado */
+main{
+  display:flex;            /* Flexbox */
+  justify-content:center;  /* Centrado horizontal */
+  align-items:center;      /* Centrado vertical */
+  padding:30px 15px;
 }
 
-/* ===== TARJETA LOGIN ===== */
-article {
-    background: rgba(255, 255, 255, 0.1);
-    width: 360px;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+/* =========================
+   TARJETA LOGIN
+   ========================= */
+/* Tarjeta del formulario */
+article{
+  width:min(380px, 90vw);  /* Máx 380px, adaptable a móvil */
+  background:rgba(255,255,255,.10);
+  padding:25px;
+  border-radius:12px;
 }
 
-/* ===== TÍTULO ===== */
-article h1 {
-    text-align: center;
-    margin-bottom: 25px;
+/* Título del formulario */
+article h1{
+  text-align:center;
+  margin-bottom:15px;
 }
 
-/* ===== FORMULARIO ===== */
-.login-form {
-    display: flex;
-    flex-direction: column;
+/* =========================
+   FORMULARIO
+   ========================= */
+/* Formulario con elementos en columna */
+.login-form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
-.form-group {
-    margin-bottom: 18px;
+/* Etiquetas de los campos */
+label{
+  display:block;
+  margin-bottom:5px;
 }
 
-label {
-    margin-bottom: 5px;
-    display: block;
+/* Campos de entrada */
+input{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  outline:none;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    font-size: 15px;
+/* =========================
+   BOTÓN
+   ========================= */
+/* Botón principal */
+button{
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:#4de7ff;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-/* ===== BOTÓN ===== */
-button {
-    margin-top: 10px;
-    padding: 12px;
-    background: #00d4ff;
-    border: none;
-    border-radius: 8px;
-    color: #000;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+/* Hover del botón */
+button:hover{
+  background:#00a8cc;
 }
 
-button:hover {
-    background: #00a8cc;
+/* =========================
+   LINKS
+   ========================= */
+/* Enlaces dentro del formulario */
+.login-form a{
+  color:#4de7ff;
+  text-decoration:none;
 }
 
-/* ===== LINKS ===== */
-.login-form a {
-    color: #00d4ff;
-    text-decoration: none;
-    font-size: 14px;
+/* Subrayado al pasar el ratón */
+.login-form a:hover{
+  text-decoration:underline;
 }
 
-.login-form a:hover {
-    text-decoration: underline;
+/* =========================
+   FOOTER
+   ========================= */
+/* Pie de página sencillo */
+footer{
+  text-align:center;
+  padding:12px;
+  opacity:.8;              /* Ligera transparencia */
 }
 
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 15px;
-    font-size: 14px;
-    opacity: 0.8;
+/* =========================
+   RESPONSIVE
+   ========================= */
+/* Cambios para pantallas medianas o grandes */
+@media (min-width:768px){
+  body{
+    background:linear-gradient(140deg,#050b18,#0b1d3a);
+  }
 }
