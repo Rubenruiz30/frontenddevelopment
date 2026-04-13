@@ -32,6 +32,15 @@ body{
     "main"
     "footer";
 }
+.session-timer{
+  margin:15px auto;
+  padding:10px;
+  width:fit-content;
+  background:rgba(255,255,255,0.15);
+  border-radius:8px;
+  font-weight:bold;
+  text-align:center;
+}
 
 /* Asignación de cada zona al grid */
 header{grid-area:header;}
