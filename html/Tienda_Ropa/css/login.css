@@ -15,8 +15,6 @@
 body{
   min-height:100vh;        /* Altura mínima de toda la pantalla */
   overflow-x:hidden;       /* Evita scroll horizontal */
-  color:#fff;              /* Texto blanco */
-  background:#0b1d3a;      /* Fondo azul oscuro */
 }
 
 /* =========================
@@ -32,6 +30,7 @@ body{
     "main"
     "footer";
 }
+
 .session-timer{
   margin:15px auto;
   padding:10px;
@@ -69,8 +68,9 @@ header{
    ========================= */
 /* Barra de navegación */
 nav{
-  background:#021b2d;
+  /*background:#021b2d;*/
   padding:10px;
+  
 }
 
 /* Lista de enlaces usando Flexbox */
@@ -84,9 +84,12 @@ nav ul{
 
 /* Enlaces del menú */
 nav a{
-  color:white;
+  color:red;
   text-decoration:none;
   font-weight:bold;
+}
+.ul.names{
+  background-color: red;
 }
 
 /* Efecto hover en los enlaces */
@@ -146,6 +149,7 @@ input{
   border-radius:8px;
   outline:none;
 }
+
 .session-timer{
   position: fixed;
   top: 10px;
@@ -179,6 +183,22 @@ button:hover{
 }
 
 /* =========================
+   BOTONES DE TEMA
+   ========================= */
+.controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin:10px 0;
+}
+
+.theme-btn{
+  width:auto;
+  min-width:90px;
+}
+
+/* =========================
    LINKS
    ========================= */
 /* Enlaces dentro del formulario */
@@ -206,8 +226,22 @@ footer{
    RESPONSIVE
    ========================= */
 /* Cambios para pantallas medianas o grandes */
+
+/*
 @media (min-width:768px){
   body{
     background:linear-gradient(140deg,#050b18,#0b1d3a);
   }
+}*/
+.controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin:10px 0;
+}
+
+.theme-btn{
+  width:auto;
+  min-width:90px;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,12 +7,9 @@
 
   <title>Camifut - Login</title>
 
-  <!-- Si también usas este -->
   <link rel="stylesheet" href="../css/common.css" />
-  <link rel="stylesheet" href="../css/login.css " />
-
-  <!-- Si también usas este -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="../../../Theme/Theme.css" />
 </head>
 
 <body>
@@ -21,11 +18,18 @@
   <header>
     <img src="../../img/7884c6a5-c77f-437b-b94c-a55cb4cfc6bb.png" alt="Camifut Logo" class="logo">
     <p>Camifut - Acceso</p>
+     <div class="controls">
+          <button type="button" class="theme-btn" data-theme="light">☀️ Light</button>
+          <button type="button" class="theme-btn" data-theme="dark">🌙 Dark</button>
+          <button type="button" class="theme-btn" data-theme="neon">🧪 Neon</button>
+          <button type="button" class="theme-btn" data-theme="forest">🌲 Forest</button>
+        </div>
+
   </header>
 
   <!-- Navegación -->
-  <nav>
-    <ul>
+  <nav class="card">
+    <ul class="names">
       <li><a href="login.html">Home</a></li>
       <li><a href="espana.html">España</a></li>
       <li><a href="../html/francia.html">Francia</a></li>
@@ -39,7 +43,7 @@
 
   <!-- Contenido principal -->
   <main>
-    <article>
+    <article class="card">
       <h1>Iniciar sesión</h1>
 
       <form action="#" method="post" class="login-form">
@@ -47,9 +51,11 @@
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="example@camifut.com" required>
         </div>
+
         <div class="session-timer">
           Tiempo de sesión: <span id="timer">00:00:00</span>
         </div>
+
         <div class="form-group">
           <label for="password">Contraseña</label>
           <input type="password" id="password" name="password" placeholder="********" required>
@@ -62,13 +68,13 @@
           </label>
         </div>
 
+       
         <button type="submit">Entrar</button>
 
         <p style="margin-top: 12px;">
           ¿No tienes cuenta? <a href="#">Regístrate</a>
         </p>
-       <audio class="sonido" src="../html/chimes.mp3"></audio>
-<script src="../html/timer.js" defer></script>
+
         <p>
           <a href="#">¿Olvidaste tu contraseña?</a>
         </p>
@@ -80,6 +86,10 @@
     <p>&copy; 2026 Camifut - Mundial 2026</p>
   </footer>
 
-</body>
+  <audio class="sonido" src="../html/chimes.mp3"></audio>
 
+  <script src="../html/timer.js" defer></script>
+  <script src="../../../Theme/theme.js" defer></script>
+
+</body>
 </html>
