@@ -185,12 +185,15 @@ button:hover{
 /* =========================
    BOTONES DE TEMA
    ========================= */
-.controls{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin:10px 0;
+.controls {
+  position: absolute;   /* o fixed si quieres que no se mueva */
+  top: 10px;            /* distancia desde arriba */
+  right: 10px;          /* distancia desde la derecha */
+
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .theme-btn{
