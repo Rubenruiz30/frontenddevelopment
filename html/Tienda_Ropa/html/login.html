@@ -10,21 +10,37 @@
   <link rel="stylesheet" href="../css/common.css" />
   <link rel="stylesheet" href="../css/login.css" />
   <link rel="stylesheet" href="../../../Theme/Theme.css" />
+
+  <style>
+    /* Canvas del humo */
+    #smoke_canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- Canvas para el efecto humo -->
+  <canvas id="smoke_canvas"></canvas>
 
   <!-- Header / Logo -->
   <header>
     <img src="../../../img/camiseta de futol.webp" alt="Camifut Logo" class="logo">
     <p>Camifut - Acceso</p>
-     <div class="controls">
-          <button type="button" class="theme-btn" data-theme="light">☀️ Light</button>
-          <button type="button" class="theme-btn" data-theme="dark">🌙 Dark</button>
-          <button type="button" class="theme-btn" data-theme="neon">🧪 Neon</button>
-          <button type="button" class="theme-btn" data-theme="forest">🌲 Forest</button>
-        </div>
 
+    <div class="controls">
+      <button type="button" class="theme-btn" data-theme="light">☀️ Light</button>
+      <button type="button" class="theme-btn" data-theme="dark">🌙 Dark</button>
+      <button type="button" class="theme-btn" data-theme="neon">🧪 Neon</button>
+      <button type="button" class="theme-btn" data-theme="forest">🌲 Forest</button>
+    </div>
   </header>
 
   <!-- Navegación -->
@@ -68,7 +84,6 @@
           </label>
         </div>
 
-       
         <button type="submit">Entrar</button>
 
         <p style="margin-top: 12px;">
@@ -90,6 +105,7 @@
 
   <script src="../html/timer.js" defer></script>
   <script src="../../../Theme/theme.js" defer></script>
+  <script src="../../../smoke/smoke.js" defer></script>
 
 </body>
 </html>
