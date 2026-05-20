@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor de Documentos</title>
+</head>
+
+<body>
+
+    <h1>Conversor de Documentos</h1>
+
+    <textarea id="entrada" placeholder="Documento de entrada"></textarea>
+
+    <select id="tipoConversion">
+        <option value="json-csv">JSON → CSV</option>
+        <option value="json-xml">JSON → XML</option>
+        <option value="csv-json">CSV → JSON</option>
+        <option value="xml-json">XML → JSON</option>
+    </select>
+
+    <button onclick="convertir()">Convertir</button>
+
+    <textarea id="salida" placeholder="Documento convertido"></textarea>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

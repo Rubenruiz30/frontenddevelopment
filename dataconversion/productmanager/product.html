@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+  <h1>Product Manager</h1>
+
+  <section class="form-section">
+    <h3>Add New Product</h3>
+
+    <input id="name" type="text" placeholder="Product name">
+    <input id="description" type="text" placeholder="Description">
+
+    <select id="category">
+      <option>Clothing</option>
+      <option>Technology</option>
+      <option>Food</option>
+      <option>Other</option>
+    </select>
+
+    <label>
+      Upload Product Image:
+      <input id="image" type="file" accept="image/*">
+    </label>
+
+    <button onclick="addProduct()">Add Product</button>
+  </section>
+
+  <section>
+    <h2>Product Catalog</h2>
+    <div id="catalog" class="catalog"></div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
