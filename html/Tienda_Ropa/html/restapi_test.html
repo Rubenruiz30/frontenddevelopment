@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // variable url para la api
+      const Server_url = 'http://localhost:8081/users'
+
+      //
+      async function getUser() {
+        const start = Date.now();
+        // Fetch api is used by javascript for http requests
+        const response = await fetch(Server_url)
+        const end = Date.now();
+        console.log(end - start)
+        console.log(response)
+        const data = await response.text()
+        console.log(data)
+      }
+      async function getAllusers(){
+        const start = Date.now();
+        // Fetch api is used by javascript for http requests
+        const response = await fetch(Server_url + "/all")
+        const end = Date.now();
+        console.log(end - start)
+        console.log(response)
+        const data = await response.json()
+        console.log(data)
+      }
+      getUser()
+      getAllusers()
+    </script>
+  </body>
+</html>

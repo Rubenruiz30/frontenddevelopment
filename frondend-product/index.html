@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Productos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="header">
+        <h1>Gestión de Productos</h1>
+        <p>Frontend separado en Visual Studio Code conectado a Spring Boot</p>
+    </header>
+
+    <section class="login-card" id="loginSection">
+        <h2>Iniciar sesión</h2>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" placeholder="Introduce tu usuario" required>
+            </div>
+
+            <div class="input-group">
+                <label for="role">Rol</label>
+                <select id="role" required>
+                    <option value="">Selecciona un rol</option>
+                    <option value="ADMIN">Administrador</option>
+                    <option value="USER">Usuario normal</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+    </section>
+
+    <section class="dashboard hidden" id="dashboardSection">
+
+        <div class="topbar">
+            <div>
+                <h2 id="panelTitle">Panel</h2>
+                <p id="welcomeText"></p>
+            </div>
+
+            <button class="btn-dark" onclick="logout()">Cerrar sesión</button>
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <section class="card admin-only hidden" id="createProductSection">
+            <h2>Crear producto</h2>
+
+            <form id="productForm">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" placeholder="Ej: Pantalones" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="size">Talla</label>
+                        <input type="text" id="size" placeholder="Ej: L" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="price">Precio</label>
+                        <input type="text" id="price" placeholder="Ej: 100" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="stock">Stock</label>
+                        <input type="number" id="stock" placeholder="Ej: 20" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Productos</h2>
+
+            <div class="permissions-box" id="permissionsBox"></div>
+
+            <div class="search-box">
+                <select id="searchType">
+                    <option value="id">Buscar por ID</option>
+                    <option value="name">Buscar por nombre</option>
+                    <option value="size">Buscar por talla</option>
+                    <option value="price">Buscar por precio</option>
+                    <option value="stock">Buscar por stock</option>
+                </select>
+
+                <input type="text" id="searchValue" placeholder="Introduce el valor">
+
+                <button class="btn-dark" onclick="searchProduct()">Buscar</button>
+                <button class="btn-primary" onclick="loadProducts()">Cargar productos</button>
+                <button class="btn-clear" onclick="clearSearch()">Limpiar búsqueda</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Talla</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th class="admin-column">Acción</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="productTableBody">
+                    <tr>
+                        <td colspan="6" class="empty">Pulsa “Cargar productos”</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <button id="prevPageBtn" class="btn-dark" onclick="prevPage()">Anterior</button>
+                <span id="pageInfo">Página 0 de 0</span>
+                <button id="nextPageBtn" class="btn-dark" onclick="nextPage()">Siguiente</button>
+            </div>
+
+        </section>
+
+    </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
