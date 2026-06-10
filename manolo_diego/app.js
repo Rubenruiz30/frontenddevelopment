@@ -30,8 +30,13 @@ let currentSearchValue = "";
 loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const username = document.getElementById("username").value;
+    const username = document.getElementById("username").value.trim();
     const role = document.getElementById("role").value;
+
+    if (username === "" || role === "") {
+        showMessage("Introduce usuario y rol", "error");
+        return;
+    }
 
     currentUser = username;
     currentRole = role;
@@ -50,12 +55,14 @@ productForm.addEventListener("submit", function (event) {
         return;
     }
 
+    const imageUrlValue = document.getElementById("imageUrl").value.trim();
+
     const product = {
-        name: document.getElementById("name").value,
-        size: document.getElementById("size").value,
-        price: document.getElementById("price").value,
+        name: document.getElementById("name").value.trim(),
+        size: document.getElementById("size").value.trim(),
+        price: document.getElementById("price").value.trim(),
         stock: parseInt(document.getElementById("stock").value),
-        imageUrl: document.getElementById("imageUrl").value
+        imageUrl: imageUrlValue === "" ? null : imageUrlValue
     };
 
     fetch(API_URL, {
@@ -89,7 +96,7 @@ productForm.addEventListener("submit", function (event) {
         })
         .catch(error => {
             console.error(error);
-            showMessage("Error al guardar el producto. Mira la consola del navegador.", "error");
+            showMessage("Error al guardar el producto. Revisa Spring Boot o la consola.", "error");
         });
 });
 
@@ -103,14 +110,14 @@ function showDashboard() {
         panelTitle.textContent = "Panel de Administrador";
         createProductSection.classList.remove("hidden");
 
-        permissionsBox.textContent = "Permisos de administrador: puedes crear, ver, buscar y eliminar productos.";
+        permissionsBox.textContent = "Permisos de administrador: crear, ver, buscar y eliminar productos.";
         permissionsBox.className = "permissions-box admin";
 
     } else {
         panelTitle.textContent = "Panel de Usuario Normal";
         createProductSection.classList.add("hidden");
 
-        permissionsBox.textContent = "Permisos de usuario normal: solo puedes ver y buscar productos.";
+        permissionsBox.textContent = "Permisos de usuario normal: ver y buscar productos.";
         permissionsBox.className = "permissions-box user";
     }
 
@@ -181,7 +188,7 @@ function searchProduct(page = 0) {
         })
         .catch(error => {
             console.error(error);
-            showMessage("Error al buscar productos. Revisa que exista /products/search en Spring Boot.", "error");
+            showMessage("Error al buscar productos. Revisa /products/search en Spring Boot.", "error");
         });
 }
 
@@ -228,10 +235,10 @@ function renderProducts(products) {
             : "";
 
         const imageContent = product.imageUrl && product.imageUrl.trim() !== ""
-            ? `<img src="${product.imageUrl}" alt="Foto de ${product.name}" class="product-image">`
+            ? `<img src="${product.imageUrl}" alt="Foto de ${escapeHtml(product.name)}" class="product-image">`
             : `
                 <div class="no-image-big">
-                    <span>🖥️</span>
+                    <span>📦</span>
                     Sin foto
                 </div>
               `;
@@ -244,19 +251,19 @@ function renderProducts(products) {
 
                 <div class="product-info">
                     <div class="product-top">
-                        <h3 class="product-title">${product.name}</h3>
+                        <h3 class="product-title">${escapeHtml(product.name)}</h3>
                         <span class="badge">ID #${product.id}</span>
                     </div>
 
                     <div class="product-meta">
                         <div class="meta-item">
                             <span class="meta-label">Talla</span>
-                            <span class="meta-value">${product.size}</span>
+                            <span class="meta-value">${escapeHtml(product.size)}</span>
                         </div>
 
                         <div class="meta-item">
                             <span class="meta-label">Precio</span>
-                            <span class="meta-value">${product.price} €</span>
+                            <span class="meta-value">${escapeHtml(product.price)} €</span>
                         </div>
 
                         <div class="meta-item">
@@ -370,7 +377,7 @@ function logout() {
 
     tableBody.innerHTML = `
         <div class="empty-card">
-            Pulsa “Cargar productos”
+            Pulsa “Cargar productos” para mostrar los datos
         </div>
     `;
 
@@ -396,6 +403,19 @@ function checkSession() {
         currentRole = savedRole;
         showDashboard();
     }
+}
+
+function escapeHtml(value) {
+    if (value === null || value === undefined) {
+        return "";
+    }
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
 }
 
 checkSession();

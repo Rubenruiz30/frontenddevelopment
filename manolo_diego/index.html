@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>TechStore - Gestión de Productos</title>
+    <title>CyberStock - Gestión de Productos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
@@ -11,24 +11,26 @@
 <body>
 
 <div class="background-grid"></div>
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
 
 <div class="app">
 
     <header class="header">
         <div class="header-badge">Spring Boot + PostgreSQL + Visual Studio Code</div>
-        <h1>TechStore Manager</h1>
-        <p>Panel de gestión de productos con roles, filtros, imágenes online y paginación</p>
+        <h1>CyberStock</h1>
+        <p>Sistema de gestión de productos con roles de administrador y usuario normal</p>
     </header>
 
     <section class="login-card" id="loginSection">
-        <div class="card-icon">🔐</div>
+        <div class="card-icon">🛡️</div>
         <h2>Acceso al sistema</h2>
-        <p class="login-subtitle">Selecciona tu rol para entrar al panel</p>
+        <p class="login-subtitle">Introduce tu usuario y selecciona el rol para entrar</p>
 
         <form id="loginForm">
             <div class="input-group">
                 <label for="username">Usuario</label>
-                <input type="text" id="username" placeholder="Introduce tu usuario" required>
+                <input type="text" id="username" placeholder="Ej: ana" required>
             </div>
 
             <div class="input-group">
@@ -48,7 +50,7 @@
 
         <div class="topbar">
             <div>
-                <span class="system-status">● Sistema online</span>
+                <span class="system-status">● Backend conectado</span>
                 <h2 id="panelTitle">Panel</h2>
                 <p id="welcomeText"></p>
             </div>
@@ -61,27 +63,29 @@
         <section class="card admin-only hidden" id="createProductSection">
             <div class="section-title">
                 <div>
-                    <span class="section-kicker">ADMIN TOOLS</span>
-                    <h2>Crear producto</h2>
+                    <span class="section-kicker">ADMINISTRADOR</span>
+                    <h2>Crear nuevo producto</h2>
+                    <p>Los productos se guardan automáticamente en la base de datos.</p>
                 </div>
-                <span class="chip">Imagen desde internet</span>
+
+                <span class="chip">Imagen online</span>
             </div>
 
             <form id="productForm">
                 <div class="form-grid">
                     <div class="input-group">
                         <label for="name">Nombre</label>
-                        <input type="text" id="name" placeholder="Ej: Teclado mecánico" required>
+                        <input type="text" id="name" placeholder="Ej: Ratón gaming" required>
                     </div>
 
                     <div class="input-group">
                         <label for="size">Talla / Size</label>
-                        <input type="text" id="size" placeholder="Ej: L, M, 42, Única" required>
+                        <input type="text" id="size" placeholder="Ej: M, L, 42, Única" required>
                     </div>
 
                     <div class="input-group">
                         <label for="price">Precio</label>
-                        <input type="text" id="price" placeholder="Ej: 99.99" required>
+                        <input type="text" id="price" placeholder="Ej: 49.99" required>
                     </div>
 
                     <div class="input-group">
@@ -91,7 +95,7 @@
 
                     <div class="input-group image-url-group">
                         <label for="imageUrl">URL de imagen</label>
-                        <input type="text" id="imageUrl" placeholder="https://ejemplo.com/imagen.jpg">
+                        <input type="text" id="imageUrl" placeholder="https://www.bing.com/th/id/...">
                     </div>
 
                     <button type="submit" class="btn-primary">Guardar producto</button>
@@ -102,9 +106,11 @@
         <section class="card">
             <div class="section-title">
                 <div>
-                    <span class="section-kicker">PRODUCT DATABASE</span>
-                    <h2>Productos</h2>
+                    <span class="section-kicker">BASE DE DATOS</span>
+                    <h2>Productos registrados</h2>
+                    <p>La búsqueda y la paginación se realizan desde Spring Boot contra PostgreSQL.</p>
                 </div>
+
                 <span class="chip" id="pageInfo">Página 0 de 0</span>
             </div>
 
@@ -119,7 +125,7 @@
                     <option value="stock">Buscar por stock</option>
                 </select>
 
-                <input type="text" id="searchValue" placeholder="Introduce el valor">
+                <input type="text" id="searchValue" placeholder="Introduce el valor de búsqueda">
 
                 <button class="btn-dark" onclick="searchProduct()">Buscar</button>
                 <button class="btn-primary" onclick="loadProducts()">Cargar productos</button>
@@ -127,7 +133,7 @@
             </div>
 
             <div id="productTableBody" class="product-grid">
-                <div class="empty-card">Pulsa “Cargar productos”</div>
+                <div class="empty-card">Pulsa “Cargar productos” para mostrar los datos</div>
             </div>
 
             <div class="pagination">
